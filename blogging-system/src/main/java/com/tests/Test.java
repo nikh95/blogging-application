@@ -1,42 +1,22 @@
-package com.BloggingApplication.DAO;
+package BlogComment;
 
-import java.util.Date;
-
-import com.BloggingApplication.model.Blog;
-//import com.BloggingApplication.model.User;
+import model.Blog;
+import model.Comment;
+import model.User;
 
 public class Test {
-
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		Comment com = new Comment();
+		//com.setCommentId(101);
+		com.setComments("HI");
+		User ser= new User();ser.setUsername("Nikh");
+		com.setUser(ser);Blog blog = new Blog();
+		//blog.setBlogId(2000);
+		com.setBlog(blog);
+		ComDAO dao = new DaoImple();
+		dao.createComment(com);
+		System.out.println("object inserted");
 
-		
-		
-		
-		
-		Blog blog1=new Blog();
-		blog1.setBlogTitle("Science");
-		
-		blog1.setCategory("Art");
-		blog1.setDescription("some Mathematics ");
-		blog1.setSummary("some mathematics tricks are as follows:"
-				+ "1.Pythagorous therom :a^2+b^2=c^2"
-				+ "2. total of  the angles in the triangle=180");
-		
-		BlogImple bi=new BlogImple();
-		bi.createBlog(blog1);
-		System.out.println("blog inserted");
-		
-		bi.deleteBlog(2);
-		
-		System.out.println("blog deleted");
-		
-		
-		
-		
 	}
-	
-	
-	
 
 }
